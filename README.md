@@ -1,3 +1,26 @@
+A quick note about this fork
+----------------------------
+I was using the 2.0.3 release thru NPM in an iOS app, where audio recordings are played
+alone with the matching transcripts. I found that the timing between the audio and transcript
+was always off, sometimes by as much as 20 seconds in a 30-minute recording. Upon deeper investigation,
+I found that the underlying iOS component `AVPlayer` by default doesn't report precise timing during playback. An 
+[option](https://developer.apple.com/documentation/avfoundation/avurlassetpreferprecisedurationandtimingkey?language=objc) can be turned on when creating the audio asset to achieve high precision.
+
+So a quick change was made on this fork. I'd like to play around with the change a bit more to see
+if it causes any noticable delay during initialization. If all is well, I'll consider submitting a PR.
+
+If you are struggling with the same problem, give this a try.
+
+Here is how you can use the amended version:
+
+```
+# remove your existing react-native-audio-toolkit NPM package
+npm install git://github.com/savvystack/react-native-audio-toolkit#ios-precise-duration-and-timing --save
+# or
+yarn add git://github.com/savvystack/react-native-audio-toolkit#ios-precise-duration-and-timing
+```
+
+
 ![banner](/banner.png)
 
 [![npm version](https://badge.fury.io/js/%40react-native-community%2Faudio-toolkit.svg)](https://badge.fury.io/js/%40react-native-community%2Faudio-toolkit)

@@ -112,7 +112,7 @@ RCT_EXPORT_METHOD(prepare:(nonnull NSNumber*)playerId
     }
     
     // Load asset from the url
-    AVURLAsset *asset = [AVURLAsset assetWithURL: url];
+    AVURLAsset *asset = [AVURLAsset URLAssetWithURL: url options: @{AVURLAssetPreferPreciseDurationAndTimingKey: @YES}];
     ReactPlayerItem *item = (ReactPlayerItem *)[ReactPlayerItem playerItemWithAsset: asset];
     item.reactPlayerId = playerId;
     
