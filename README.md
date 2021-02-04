@@ -14,9 +14,7 @@ If you are struggling with the same problem, give this a try.
 Here is how you can use the amended version:
 
 ```
-# remove your existing react-native-audio-toolkit NPM package
-npm install git://github.com/savvystack/react-native-audio-toolkit#ios-precise-duration-and-timing --save
-# or
+yarn remove @react-native-community/audio-toolkit
 yarn add git://github.com/savvystack/react-native-audio-toolkit#ios-precise-duration-and-timing
 ```
 
